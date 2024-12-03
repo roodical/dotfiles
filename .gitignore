@@ -1,0 +1,9 @@
+# Ignore all files so that I can manually whitelist desired ones.
+*
+!.gitignore
+
+!/hypr/
+!/hypr/**
+
+!/waybar/
+!/waybar/**
