@@ -7,3 +7,9 @@
 
 !/waybar/
 !/waybar/**
+
+!/foot/
+!/foot/**
+
+!/fish/
+!/fish/**
