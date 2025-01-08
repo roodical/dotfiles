@@ -13,3 +13,9 @@
 
 !/fish/
 !/fish/**
+
+!/nvim/
+!/nvim/**
+
+!/dunst/
+!/dunst/**
