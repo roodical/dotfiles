@@ -2,6 +2,7 @@
   "layer": "top",
   "position": "top", 
   "height": 32,
+  "margin": "3, 9, 0, 9",
   
   "modules-left":   ["hyprland/workspaces", "wlr/taskbar"],
   "modules-center": ["clock#time", "clock#date"],
