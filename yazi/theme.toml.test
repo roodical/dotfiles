@@ -1,0 +1,185 @@
+# ~/.config/yazi/theme.toml
+
+# ==============================================================================
+# Gruvbox Material Hard Palette for Yazi - REFINED
+# ==============================================================================
+# Based on the image palette provided.
+# ==============================================================================
+
+# Core colors (general foreground/backgrounds)
+# Reference from your image:
+# bg_dim: #141617
+# bg0:    #1d2021
+# bg1:    #282828
+# bg2:    #282828
+# bg3:    #3c3836
+# bg4:    #3c3836
+# bg5:    #504945
+# bg_statusline1: #282828
+# bg_statusline2: #32302f
+# bg_statusline3: #504945
+# bg_current_word: #32302f
+# fg0:    #d4be98
+# fg1:    #ddc7a1
+# red:    #ea6962
+# orange: #e78a4e
+# yellow: #d8a657
+# green:  #a9b665
+# aqua:   #89b482
+# blue:   #7d0ea3  (Note: This blue is quite purple-ish in this palette)
+# purple: #d38b9b
+# grey0:  #7c6f64
+# grey1:  #928374
+# grey2:  #a99984
+
+# Global styles or defaults
+[border]
+fg = "#504945" # bg5 - A slightly lighter border for definition
+bg = "#1d2021" # bg0
+
+[cursor]
+fg = "#1d2021" # bg0 - Text on cursor
+bg = "#d4be98" # fg0 - Cursor background (inverted)
+
+# General text and selection
+# `[current]` is for the item currently under the cursor/highlighted.
+# `[selected]` is for items explicitly marked for multi-selection (e.g., with Spacebar).
+[current]
+fg = "#d4be98" # fg0 - Text on current line
+bg = "#32302f" # bg_current_word / bg_statusline2 - Standard Gruvbox "current line" background
+
+[hover]
+fg = "#d4be98" # fg0
+bg = "#3c3836" # bg3 - Slightly lighter than general bg for hover effect
+
+[selected]
+fg = "#d4be98" # fg0 - Text on multi-selected items
+bg = "#504945" # bg5 - Distinct but not too bright background for selected items
+
+[yank]
+fg = "#ea6962" # red (for cut/copied status indicator)
+
+[header]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+[empty]
+fg = "#7c6f64" # grey0 - For empty directories/panes
+bg = "#1d2021" # bg0
+
+# Input field for commands and prompts
+[input]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+# Icons
+[icon]
+# Default icon color (often overridden by filetype rules below)
+fg = "#a99984" # grey2 - Neutral default icon color
+
+# Status bar at the bottom
+[status]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+[status.mode_normal]
+fg = "#d4be98" # fg0
+bg = "#a9b665" # green
+
+[status.mode_visual]
+fg = "#1d2021" # bg0
+bg = "#d38b9b" # purple
+
+[status.mode_select]
+fg = "#1d2021" # bg0
+bg = "#7d0ea3" # blue (since this is an active mode, the purple-ish blue is okay here)
+
+[status.progress_normal]
+fg = "#7d0ea3" # blue
+bg = "#3c3836" # bg3
+
+[status.progress_error]
+fg = "#ea6962" # red
+bg = "#3c3836" # bg3
+
+[status.separator]
+fg = "#504945" # bg5
+bg = "#1d2021" # bg0
+
+# Tabs
+[tab.active]
+fg = "#d4be98" # fg0
+bg = "#282828" # bg1
+
+[tab.inactive]
+fg = "#7c6f64" # grey0
+bg = "#1d2021" # bg0
+
+# Help menu / man pages (if shown within Yazi)
+[help]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+# Filter/search bar
+[filter]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+# Prompt (yes/no questions, etc.)
+[prompt]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+[task]
+fg = "#d4be98" # fg0
+bg = "#1d2021" # bg0
+
+# File type specific colors
+# This section defines colors for different file types.
+[filetype]
+rules = [
+    # Directories - Let's try 'aqua' for directories. It's a green-ish blue.
+    { name = "*/", fg = "#89b482" },  # aqua
+
+    # Executables - Green is a common choice.
+    { is = "exec", fg = "#a9b665" },  # green
+
+    # Symlinks - Aqua or a different color for links.
+    { is = "link", fg = "#89b482" },  # aqua
+
+    # Orphaned symlinks (broken links) - Definitely red for danger.
+    { is = "orphan", fg = "#ea6962" }, # red
+
+    # Images - Orange is a good fit.
+    { mime = "image/*", fg = "#e78a4e" }, # orange
+
+    # Archives - Yellow is a common choice for compressed files.
+    { mime = "application/zip", fg = "#d8a657" }, # yellow
+    { mime = "application/x-tar", fg = "#d8a657" }, # yellow
+    { mime = "application/gzip", fg = "#d8a657" }, # yellow
+
+    # Videos/Audio - Purple is a distinct choice.
+    { mime = "video/*", fg = "#d38b9b" }, # purple
+    { mime = "audio/*", fg = "#d38b9b" }, # purple
+
+    # Dotfiles (hidden files) - Muted grey for less prominence.
+    { name = ".*", fg = "#7c6f64" }, # grey0
+
+    # Fallback for all other files
+    { name = "*", fg = "#d4be98" }, # fg0
+]
+
+# Preview pane (e.g., text, images, etc.)
+[preview]
+bg = "#1d2021" # bg0
+
+# Syntax highlighting within the preview pane
+# For full syntax highlighting, you'd typically use a `syntect_theme`.
+# You need a .tmTheme file that matches your Gruvbox Material Hard palette.
+# If you have one, place it (e.g., ~/.config/yazi/gruvbox-material-hard.tmTheme)
+# and uncomment/set the path below:
+# syntect_theme = "~/.config/yazi/gruvbox-material-hard.tmTheme"
+
+# ==============================================================================
+# End of Gruvbox Material Hard Theme
+# ==============================================================================

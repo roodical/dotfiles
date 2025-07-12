@@ -8,7 +8,7 @@ return {
     config = function()
         require'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "javascript", "python", "json", "sql" },
+            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "json", "rust", "markdown", "markdown_inline", "bash", "yaml", "html", "css", "toml" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -48,9 +48,5 @@ return {
             },
         }
 
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = "eruby.yaml",
-            command = "set filetype=yaml",
-        })
     end,
 }

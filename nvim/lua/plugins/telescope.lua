@@ -9,11 +9,30 @@ return {
 		vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
+		
 		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find Word under Cursor" })
 		vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Find Symbols" })
 		vim.keymap.set("n", "<leader>fo", builtin.git_commits, { desc = "Search Git Commits" })
 		vim.keymap.set("n", "<leader>fp", builtin.git_bcommits, { desc = "Search Git Commits for Buffer" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
+        
+        -- LSP go to definition
+        vim.keymap.set('n', 'gd', "<cmd>Telescope lsp_definitions<CR>", {})
+
+        local actions = require('telescope.actions')
+
+        require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<c-d>"] = actions.delete_buffer,
+                    },
+                    n = {
+                        ["<c-d>"] = actions.delete_buffer,
+                        ["dd"] = actions.delete_buffer,
+                    },
+                },
+            },
+        }
 	end
 }
