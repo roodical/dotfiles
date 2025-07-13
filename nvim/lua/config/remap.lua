@@ -8,8 +8,8 @@ vim.g.maplocalleader = "\\"
 
 vim.keymap.set("n", "<leader>bp", ":b#<CR>")
 
-vim.keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true })
 
 -- # Go to definition (in a split)
 -- function definition_split()

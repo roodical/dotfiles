@@ -43,5 +43,4 @@ vim.opt.updatetime = 50
 -- end
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
-
 -- vim.opt.clipboard = "unnamedplus"

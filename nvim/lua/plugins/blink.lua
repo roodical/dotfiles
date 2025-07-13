@@ -13,7 +13,7 @@ return {
             default = { 
                 "lsp",
                 "path",
-                "buffer",
+                -- "buffer",
                 "codecompanion"
             },
         },

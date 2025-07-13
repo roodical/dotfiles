@@ -4,3 +4,4 @@ end
 
 set -x COSMIC_DATA_CONTROL_ENABLED 1
 
+set -x PATH ~/.npm-global/bin $PATH
